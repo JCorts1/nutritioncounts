@@ -1,15 +1,22 @@
-import Home from "./views/Home"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./views/Home";
+import Goals from "./views/Goals";
+import MainCore from "./views/MainCore";
+import Stats from "./views/Stats";
+import DisplayGoal from "./views/DisplayGoal";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
-      <h1>Hello</h1>
-      <Home/>   
-    </div>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/goals" element={<Goals />} />
+        <Route path="/maincore" element={<MainCore />} />
+        <Route path="/stats" element={<Stats />} />
+        <Route path="/displaygoal" element={<DisplayGoal />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
