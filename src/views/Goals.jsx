@@ -1,34 +1,38 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import salat from "../img/salat.png";
+import HomeButton from "../components/HomeButton";
 import corn from "../img/corn.png";
 import carrot from "../img/carrot.png";
-import FirstButton from "../components/FirstButton";
+import MainBackground from "../components/MainBackground";
+import hamburguer from "../img/hamburguer.png";
 
 const Goals = () => {
   return (
-    <div className="flex-col h-screen">
-      <div className="w-screen h-2/6 flex space-x-64 bg-[#C3E2C2]">
-        <div className="w-3/12 h-1/4 rounded-3xl mt-14 ml-12 bg-[#DBCC95] flex justify-center items-center">
-          <img src={salat} alt="Salat" />
+    <MainBackground>
+      <div className="flex-row h-screen">
+        <div className="w-screen h-20 ">
+          <HomeButton></HomeButton>
         </div>
-        <div className="w-2/12 h-14 bg-[#EAECCC] rounded-3xl mt-6 flex justify-center items-center hover:bg-[#CD8D7A] hover:text-[#EAECCC]">
-          <Link to="/"
-            className="text-[#CD8D7A] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:rounded-full hover:bg-[#C3E2C2] duration-200"
-          >
-            Home
-          </Link>
+        <div className="w-screen h-2/7 flex items-center justify-between">
+          <div className="bg-[#DBCC95] w-3/12 h-3/4 rounded-2xl ml-5 flex items-center justify-center">
+            <img className="w-3/6" src={salat} alt="salat" />
+          </div>
+          <img className="mr-10" src={carrot} alt="Carrot" />
         </div>
-        <img className="h-5/6 mt-14" src={carrot} alt="carrot" />
+        <div className="w-screen h-2/6 flex items-center justify-between">
+          <h3 className="text-[#CD8D7A]  text-5xl ml-6">Lose Weight</h3>
+          <h2 className="text-[#CD8D7A] w-80 text-7xl">What’s your goal?</h2>
+          <h3 className="text-[#CD8D7A]  text-5xl mr-12">Gain Weight</h3>
+        </div>
+        <div className="w-screen h-2/6 flex items-center justify-between">
+          <img className="ml-10" src={corn} alt="corn" />
+          <div className="bg-[#DBCC95] w-3/12 h-3/4 rounded-2xl mr-5 flex items-center justify-center">
+            <img className="w-3/6" src={hamburguer} alt="salat" />
+          </div>
+        </div>
       </div>
-      //Secondline
-      <div className="w-screen h-2/6 space-x-64 bg-[#C3E2C2]">
-        <h2>Lose Weight</h2>
-        <h1 className="text-7xl  text-[#CD8D7A]">What's your goal?</h1>
-        <FirstButton text="Whatever text"/>
-        <h2>Gain Weight</h2>
-      </div>
-    </div>
+    </MainBackground>
   );
 };
 
